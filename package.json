@@ -1,0 +1,21 @@
+{
+  "name": "Whats-Up-Publisher",
+  "version": "0.0.1",
+  "description": "Query databases and publisher for what-up web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harry Ho",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "cron": "^1.0.4",
+    "express": "^4.4.4",
+    "jdbc": "0.0.8",
+    "mongoose": "^3.8.14",
+    "path": "^0.4.9",
+    "redis": "^0.12.1",
+    "request": "^2.36.0"
+  }
+}

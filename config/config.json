@@ -1,0 +1,62 @@
+{
+	"version" : "0.0.1a",
+	"redis_port" : "6379",
+	"redis_url" : "localhost",
+	"mongodb_url" : "mongodb://localhost/stats",
+	"mongodb_user" : "mongouser",
+	"mongodb_password" : "mongopassword",
+	"Internetinforation" : [
+	{
+		"name": "Google",
+		"id": "google",
+		"url": "http://google.com"
+	},
+	{
+		"name": "Bing",
+		"id": "bing",
+		"url": "http://bing.com"
+	}],
+	"DB2inforation" : [
+	{
+		"name": "DB2 Server Node 1",
+		"id": "Node1",
+		"url": "jdbc:db2://<DB2 Server Node 1 address>:<PORT>/<Database>:user=<User>;password=<Password>;"
+	},
+	{
+		"name": "DB2 Server Node 2",
+		"id": "Node2",
+		"url": "jdbc:db2://<DB2 Server Node 2 address>:<PORT>/<Database>:user=<User>;password=<Password>;"
+	},
+	{
+		"name": "DB2 Server Node 3",
+		"id": "Node3",
+		"url": "jdbc:db2://<DB2 Server Node 3 address>:<PORT>/<Database>:user=<User>;password=<Password>;"
+	},
+	{
+		"name": "DB2 Server Node 4",
+		"id": "Node4",
+		"url": "jdbc:db2://<DB2 Server Node 4 address>:<PORT>/<Database>:user=<User>;password=<Password>;"
+	}],
+	"TDinforation" : [
+	{
+		"name": "Teradata Node 1",
+		"id": "TeradataNode1",
+		"url": "jdbc:teradata://<Teradata Node 1 address>/USER=<User>,PASSWORD=<Password>"
+	},
+	{
+		"name": "Teradata Node 2",
+		"id": "TeradataNode2",
+		"url": "jdbc:teradata://<Teradata Node 2 address>/USER=<User>,PASSWORD=<Password>"
+	}],
+	"Oracleinforation" : [
+	{
+		"name": "Oracle Node 1",
+		"id": "OraNode1",
+		"url": "jdbc:oracle:thin:<User>/<Password>@<Oracle Node 1 address>:<PORT>:<SID>"
+	},
+	{
+		"name": "Oracle Node 2",
+		"id": "OraNode2",
+		"url": "jdbc:oracle:thin:<User>/<Password>@<Oracle Node 2 address>:<PORT>:<SID>"
+	}]
+}
