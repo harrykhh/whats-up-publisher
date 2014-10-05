@@ -51,7 +51,8 @@ Config file located at : `config/config.json`
 	`}`
 
 7. DB2inforation - an array of object which includes the name, id and conntion jdbc url of the DB2 object.
-
+	It will use `SELECT * FROM SYSIBM.SYSDUMMY1` to get the response time.
+	
 	Example:
 	
 	`{`
@@ -61,6 +62,7 @@ Config file located at : `config/config.json`
 	`}`
 
 8. TDinforation - an array of object which includes the name, id and conntion jdbc url of the Teradata object.
+	It will use `select * from dbc.dbcinfo` to get the response time.
 
 	Example:
 	
@@ -71,7 +73,8 @@ Config file located at : `config/config.json`
 	`}`
 
 9. Oracleinforation - an array of object which includes the name, id and conntion jdbc url of the Oracle object.
-
+	It will use `SELECT 1 From dual` to get the response time.
+	
 	Example:
 	
 	`{`
