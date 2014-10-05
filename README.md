@@ -44,41 +44,41 @@ Config file located at : `config/config.json`
 	
 	Example: Google
 	
-	 `	{`
+	`{`
 		`"name": "Google",`
 		`"id": "google",`
 		`"url": "http://google.com"`
-	}`
+	`}`
 
 7. DB2inforation - an array of object which includes the name, id and conntion jdbc url of the DB2 object.
 
 	Example:
 	
-	 `	{`
+	`{`
 		`"name": "DB2 Server Node 1",`
 		`"id": "Node1",`
 		`"url": "jdbc:db2://<DB2 Server Node 1 address>:<PORT>/<Database>:user=<User>;password=<Password>;"`
-	}`
+	`}`
 
 8. TDinforation - an array of object which includes the name, id and conntion jdbc url of the Teradata object.
 
 	Example:
 	
-	 `	{`
+	`{`
 		`"name": "Teradata Node 1",`
 		`"id": "TeradataNode1",`
 		`"url": "jdbc:teradata://<Teradata Node 1 address>/USER=<User>,PASSWORD=<Password>"`
-	}`
+	`}`
 
 9. Oracleinforation - an array of object which includes the name, id and conntion jdbc url of the Oracle object.
 
 	Example:
 	
-	 `	{`
+	`{`
 		`"name": "Oracle Node 1",`
 		`"id": "OraNode1",`
 		`"url": "jdbc:oracle:thin:<User>/<Password>@<Oracle Node 1 address>:<PORT>:<SID>"`
-	}`
+	`}`
 
 
 ##Author
