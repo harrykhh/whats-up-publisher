@@ -1,4 +1,4 @@
-!node_modules/jdbc/*
-
+!node_modules/jdbc/lib/*
+node_modules/*
 bower_components/*
 
