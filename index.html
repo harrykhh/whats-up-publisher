@@ -1,0 +1,218 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Whats-up-publisher</title>
+  <meta name="description" content="The publisher of the application used display database, application and internet statuses">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Whats-up-publisher</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">The publisher of the application used display database, application and internet statuses</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/harrykhh/whats-up-publisher/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/harrykhh/whats-up-publisher/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/harrykhh/whats-up-publisher" class="code">View Whats-up-publisher on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h2>
+<a name="whats-up-publisher" class="anchor" href="#whats-up-publisher"><span class="octicon octicon-link"></span></a>Whats Up Publisher</h2>
+
+<p>The publisher of the application used display database, application and internet statuses</p>
+
+<p>Recording data into MongoDb to generate historic response time D3 graphs</p>
+
+<p>Live data updates are pushed via Redis's pubsub and socket.io</p>
+
+<h2>
+<a name="design-diagram" class="anchor" href="#design-diagram"><span class="octicon octicon-link"></span></a>Design Diagram</h2>
+
+<p><img src="https://github.com/harrykhh/whats-up/raw/master/images/diagram.png" alt="Diagram"></p>
+
+<p><img src="https://github.com/harrykhh/whats-up/raw/master/images/diagram2.png" alt="Publisher Detailed Diagram"></p>
+
+<h2>
+<a name="software-requirements" class="anchor" href="#software-requirements"><span class="octicon octicon-link"></span></a>Software Requirements</h2>
+
+<ol>
+<li><a href="http://nodejs.org">Node</a></li>
+<li><a href="http://www.mongodb.org/">MongoDB</a></li>
+<li><a href="http://redis.io/">Redis</a></li>
+</ol><h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ol>
+<li>Live graph updates with <a href="http://socket.io/">socket.io</a>
+</li>
+</ol><p><a href="https://www.youtube.com/watch?v=JhCOD53WNPo"><img src="http://img.youtube.com/vi/JhCOD53WNPo/0.jpg" alt="Live graph update"></a></p>
+
+<ol>
+<li>Integrated with <a href="http://passportjs.org/">passport</a>
+</li>
+</ol><p><img src="https://github.com/harrykhh/whats-up/raw/master/images/1.png" alt="Homescreen"></p>
+
+<h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<ol>
+<li>Clone the repo: <code>git clone https://github.com/harrykhh/whats-up-publisher.git</code>.</li>
+<li>Install with <a href="http://nodejs.org">Node</a>: <code>npm update</code>.</li>
+</ol><h2>
+<a name="settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h2>
+
+<p>Config file located at : <code>config/config.json</code></p>
+
+<ol>
+<li>Redis port(default 6379) <code>"redis_port" : "6379"</code>
+</li>
+<li>Redis URL(default localhost) <code>"redis_url" : "localhost"</code>
+</li>
+<li>MongoDb URL(default mongodb://localhost:27017/stats) <code>"mongodb_url" : "mongodb://localhost:27017/stats"</code>
+</li>
+<li>MongoDb User(default mongouser) <code>"mongodb_user" : "mongouser"</code>
+</li>
+<li>MongoDb Password(default password) <code>"mongodb_password" : "password",</code>
+</li>
+<li>
+<p>Internetinforation(default Google and Bing) - an array of object which includes the name, id and url of the object.</p>
+
+<p>Example: Google</p>
+
+<pre><code>{
+
+    "name": "Google",
+
+    "id": "google",
+
+    "url": "http://google.com"
+
+}
+</code></pre>
+</li>
+<li>
+<p>DB2inforation - an array of object which includes the name, id and conntion jdbc url of the DB2 object.
+It will use <code>SELECT * FROM SYSIBM.SYSDUMMY1</code> to get the response time.</p>
+
+<p>Example:</p>
+
+<pre><code>{
+
+    "name": "DB2 Server Node 1",
+
+    "id": "Node1",
+
+    "url": "jdbc:db2://&lt;DB2 Server Node 1 address&gt;:&lt;PORT&gt;/&lt;Database&gt;:user=&lt;User&gt;;password=&lt;Password&gt;;"
+
+}
+</code></pre>
+</li>
+<li>
+<p>TDinforation - an array of object which includes the name, id and conntion jdbc url of the Teradata object.
+It will use <code>select * from dbc.dbcinfo</code> to get the response time.</p>
+
+<p>Example:</p>
+
+<pre><code>{
+
+    "name": "Teradata Node 1",
+
+    "id": "TeradataNode1",
+
+    "url": "jdbc:teradata://&lt;Teradata Node 1 address&gt;/USER=&lt;User&gt;,PASSWORD=&lt;Password&gt;"
+
+}
+</code></pre>
+</li>
+<li>
+<p>Oracleinforation - an array of object which includes the name, id and conntion jdbc url of the Oracle object.
+It will use <code>SELECT 1 From dual</code> to get the response time.</p>
+
+<p>Example:</p>
+
+<pre><code>{
+
+    "name": "Oracle Node 1",
+
+    "id": "OraNode1",
+
+    "url": "jdbc:oracle:thin:&lt;User&gt;/&lt;Password&gt;@&lt;Oracle Node 1 address&gt;:&lt;PORT&gt;:&lt;SID&gt;"
+
+}
+</code></pre>
+</li>
+</ol><h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p><strong>Harry Ho</strong></p>
+
+<ul>
+<li><a href="https://github.com/harrykhh">https://github.com/harrykhh</a></li>
+<li><a href="http://www.linkedin.com/pub/harry-ho/43/15a/5a3">http://www.linkedin.com/pub/harry-ho/43/15a/5a3</a></li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) [2014] [Harry Ho]</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/harrykhh" class="avatar"><img src="https://avatars3.githubusercontent.com/u/4719770?v=2&amp;s=60" width="48" height="48"></a> <a href="https://github.com/harrykhh">harrykhh</a> maintains <a href="https://github.com/harrykhh/whats-up-publisher">Whats-up-publisher</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/harrykhh/whats-up-publisher/tarball/master" class="tar">tar</a><a href="https://github.com/harrykhh/whats-up-publisher/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
